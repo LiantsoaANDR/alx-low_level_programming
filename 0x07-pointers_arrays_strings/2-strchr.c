@@ -8,12 +8,14 @@
  */
 char *_strchr(char *s, char c)
 {
-	for (; *s != '\0'; s++)
+	while (*s != '\0' && *s != c)
 	{
-		if (*s == c)
-		{
-			return (s);
-		}
+		s++;
+	}
+	
+	if (*s == c)
+	{
+		return (s);
 	}
 
 	return (0);
