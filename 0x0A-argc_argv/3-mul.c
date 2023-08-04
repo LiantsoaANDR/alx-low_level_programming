@@ -5,6 +5,7 @@
  * @argc: argument count
  * @argv: argument vector
  * Return: 0 (success)
+ * if main does not receive 2 arg then return 1
  */
 int maint(int argc, char *argv[])
 {
