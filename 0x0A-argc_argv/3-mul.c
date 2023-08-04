@@ -7,7 +7,7 @@
  * Return: 0 (success)
  * if main does not receive 2 arg then return 1
  */
-int maint(int argc, char *argv[])
+int main(int argc, char *argv[])
 {
 	int mul;
 
