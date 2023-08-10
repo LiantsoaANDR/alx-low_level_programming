@@ -21,12 +21,12 @@ int *array_range(int min, int max)
 		i++;
 	}
 
-	array = malloc(sizeof(int) * (i - 1));
+	array = malloc(sizeof(int) * i);
 	if (!array)
 		return (0);
 
 	start = min;
-	for (i = 0; start < max; i++)
+	for (i = 0; start <= max; i++)
 	{
 		array[i] = start;
 		start++;
