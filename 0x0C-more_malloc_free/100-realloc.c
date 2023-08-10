@@ -28,6 +28,11 @@ void *_realloc(void *ptr, unsigned int old_size, unsigned int new_size)
 	new = malloc(new_size);
 	if (!new)
 		return (0);
+	if (!ptr)
+	{
+		free(ptr);
+		return (new);
+	}
 	old = ptr;
 	if (new_size > old_size)
 	{
