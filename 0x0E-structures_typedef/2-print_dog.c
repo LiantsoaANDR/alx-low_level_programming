@@ -1,4 +1,4 @@
-#include "main.h"
+#include "dog.h"
 #include <stdio.h>
 /**
  * print_dog - prints each member of the struct dog
@@ -8,3 +8,9 @@
  * eg, if name is NULL then prints Name: (nil)
  * if d is NULL print nothing
  */
+void print_dog(struct dog *d)
+{
+	if (!d)
+		return;
+	printf("%s\n%f\n%s\n", d->name, d->age, d->owner);
+}
