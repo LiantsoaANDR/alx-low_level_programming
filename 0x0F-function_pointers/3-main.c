@@ -18,24 +18,26 @@ int main(int argc, char *argv[])
 		printf("Error\n");
 		exit(98);
 	}
-	if (*argv[2] != "+" ||
-	*argv[2] != "-" ||
-	*argv[2] != "*" ||
-	*argv[2] != "/" ||
-	*argv[2] != "%")
+	if (*op != '+' ||
+	*op != '-' ||
+	*op != '*' ||
+	*op != '/' ||
+	*op != '%' || !op[1])
 	{
 		printf("Error\n");
 		exit(99);
 	}
-	if ((*argv[2] == "/" ||
-	*argv[2] == "%") && *argv[3] == "0")
+
+	num1 = atoi(argv[1]);
+	num2 = atoi(argv[3]);
+
+	if ((*op == '/' || *op == '%') && !num2)
 	{
 		printf("Error\n");
 		exit(100);
 	}
-	num1 = atoi(argv[1]);
-	num2 = atoi(argv[3]);
-	result = get_op_func(argv[2])(num1, num2);
+
+	result = get_op_func(op)(num1, num2);
 	printf("%d\n", result);
 
 	return (0);
