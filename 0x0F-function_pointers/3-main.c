@@ -22,7 +22,7 @@ int main(int argc, char *argv[])
 	*op != '-' ||
 	*op != '*' ||
 	*op != '/' ||
-	*op != '%' || !op[1])
+	*op != '%' || op[1] != '\0')
 	{
 		printf("Error\n");
 		exit(99);
