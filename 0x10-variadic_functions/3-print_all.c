@@ -43,7 +43,6 @@ void print_all(const char * const format, ...)
 				break;
 			default:
 				checker = 1;
-				break;
 		}
 		if (i < l - 1 && !checker)
 			printf(", ");
