@@ -15,7 +15,7 @@ void print_all(const char * const format, ...)
 {
 	va_list list;
 	int i = 0, l = 0;
-	int ci;
+	int ci, checker;
 	double f;
 	char *string;
 
@@ -24,6 +24,7 @@ void print_all(const char * const format, ...)
 	va_start(list, format);
 	while (format[i])
 	{
+		checker = 0;
 		switch (format[i])
 		{
 			case 'c':
@@ -45,9 +46,10 @@ void print_all(const char * const format, ...)
 				printf("%s", string);
 				break;
 			default:
+				checker = 1;
 				break;
 		}
-		if (i < l - 1)
+		if (i < l - 1 && !checker)
 			printf(", ");
 		i++;
 	}
