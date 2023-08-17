@@ -22,7 +22,7 @@ void print_all(const char * const format, ...)
 	while (format[l])
 		l++;
 	va_start(list, format);
-	while (format[i])
+	while (format[i] && format)
 	{
 		checker = 0;
 		switch (format[i])
