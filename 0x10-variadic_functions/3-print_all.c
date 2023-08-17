@@ -15,8 +15,7 @@ void print_all(const char * const format, ...)
 {
 	va_list list;
 	int i = 0, l = 0;
-	int ci, checker;
-	double f;
+	int checker;
 	char *string;
 
 	while (format[l])
@@ -28,16 +27,13 @@ void print_all(const char * const format, ...)
 		switch (format[i])
 		{
 			case 'c':
-				ci = va_arg(list, int);
-				printf("%c", ci);
+				printf("%c", va_arg(list, int));
 				break;
 			case 'i':
-				ci = va_arg(list, int);
-				printf("%d", ci);
+				printf("%d", va_arg(list, int));
 				break;
 			case 'f':
-				f = va_arg(list, double);
-				printf("%f", f);
+				printf("%f", va_arg(list, double));
 				break;
 			case 's':
 				string = va_arg(list, char *);
