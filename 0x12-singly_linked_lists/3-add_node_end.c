@@ -10,6 +10,7 @@
 list_t *add_node_end(list_t **head, const char *str)
 {
 	list_t *new;
+	list_t *current = *head;
 	unsigned int l = 0;
 
 	while (str[l])
@@ -20,10 +21,10 @@ list_t *add_node_end(list_t **head, const char *str)
 	new->str = strdup(str);
 	new->len = l;
 	new->next = NULL;
-	while ((*head)->next)
-		(*head) = (*head)->next;
-	*head = new;
+	while (current->next)
+		current = current->next;
+	current = new;
 
-	return (new);
+	return (current);
 
 }
