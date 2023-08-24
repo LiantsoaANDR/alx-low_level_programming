@@ -2,13 +2,13 @@
 #include <stdio.h>
 /**
  * print_list - prints all elements of a list_t list
- * @h: the list to print its elements
+ * @h: pointer to the list to print its elements
  * Return: the number of nodes
  * if str is NULL, print [0] (nil)
  */
 size_t print_list(const list_t *h)
 {
-	int i = 0;
+	size_t i = 0;
 
 	while (h)
 	{
