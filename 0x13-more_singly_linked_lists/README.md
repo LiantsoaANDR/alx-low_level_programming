@@ -145,7 +145,7 @@ Write a function that adds a new node at the end of a listint_t list.
 
 	_ Prototype: listint_t *add_nodeint_end(listint_t **head, const int n);
 	_ Return: the address of the new element, or NULL if it failed
-
+```
 julien@ubuntu:~/0x13. More singly linked lists$ cat 3-main.c 
 #include <stdlib.h>
 #include <string.h>
@@ -184,12 +184,12 @@ julien@ubuntu:~/0x13. More singly linked lists$ ./d
 402
 1024
 julien@ubuntu:~/0x13. More singly linked lists$ 
-
+```
 ## 4. Free list
 Write a function that frees a listint_t list.
 
 	_ Prototype: void free_listint(listint_t *head);
-
+```
 julien@ubuntu:~/0x13. More singly linked lists$ cat 4-main.c 
 #include <stdlib.h>
 #include <string.h>
@@ -244,13 +244,13 @@ julien@ubuntu:~/0x13. More singly linked lists$ valgrind ./e
 ==3643== For counts of detected and suppressed errors, rerun with: -v
 ==3643== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)
 julien@ubuntu:~/0x13. More singly linked lists$ 
-
+```
 ## 5. Free
 Write a function that frees a listint_t list.
 
 	_ Prototype: void free_listint2(listint_t **head);
 	_ The function sets the head to NULL
-
+```
 julien@ubuntu:~/0x13. More singly linked lists$ cat 5-main.c 
 #include <stdlib.h>
 #include <string.h>
@@ -306,13 +306,13 @@ julien@ubuntu:~/0x13. More singly linked lists$ valgrind ./f
 ==3843== For counts of detected and suppressed errors, rerun with: -v
 ==3843== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)
 julien@ubuntu:~/0x13. More singly linked lists$ 
-
+```
 ## 6. Pop
 Write a function that deletes the head node of a listint_t linked list, and returns the head node’s data (n).
 
 	_ Prototype: int pop_listint(listint_t **head);
 	_ if the linked list is empty return 0
-
+```
 julien@ubuntu:~/0x13. More singly linked lists$ cat 6-main.c 
 #include <stdlib.h>
 #include <string.h>
@@ -390,14 +390,14 @@ julien@ubuntu:~/0x13. More singly linked lists$ valgrind ./g
 ==4369== For counts of detected and suppressed errors, rerun with: -v
 ==4369== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)
 julien@ubuntu:~/0x13. More singly linked lists$ 
-
+```
 ## 7. Get node at index
 Write a function that returns the nth node of a listint_t linked list.
 
 	_ Prototype: listint_t *get_nodeint_at_index(listint_t *head, unsigned int index);
 	_ where index is the index of the node, starting at 0
 	_ if the node does not exist, return NULL
-
+```
 julien@ubuntu:~/0x13. More singly linked lists$ cat 7-main.c 
 #include <stdlib.h>
 #include <string.h>
@@ -450,13 +450,13 @@ julien@ubuntu:~/0x13. More singly linked lists$ ./h
 402
 1024
 julien@ubuntu:~/0x13. More singly linked lists$ 
-
+```
 ## 8. Sum list
 Write a function that returns the sum of all the data (n) of a listint_t linked list.
 
 	_ Prototype: int sum_listint(listint_t *head);
 	_ if the list is empty, return 0
-
+```
 julien@ubuntu:~/0x13. More singly linked lists$ cat 8-main.c 
 #include <stdlib.h>
 #include <string.h>
@@ -491,7 +491,7 @@ julien@ubuntu:~/c0x13. More singly linked lists$ gcc -Wall -pedantic -Werror -We
 julien@ubuntu:~/0x13. More singly linked lists$ ./i 
 sum = 1534
 julien@ubuntu:~/0x13. More singly linked lists$ 
-
+```
 ## 9. Insert
 Write a function that inserts a new node at a given position.
 
@@ -499,7 +499,7 @@ Write a function that inserts a new node at a given position.
 	_ where idx is the index of the list where the new node should be added. Index starts at 0
 	_ Returns: the address of the new node, or NULL if it failed
 	_ if it is not possible to add the new node at index idx, do not add the new node and return NULL
-
+```
 julien@ubuntu:~/0x13. More singly linked lists$ cat 9-main.c 
 #include <stdlib.h>
 #include <string.h>
@@ -552,14 +552,14 @@ julien@ubuntu:~/0x13. More singly linked lists$ ./j
 402
 1024
 julien@ubuntu:~/0x13. More singly linked lists$ 
-
+```
 ## 10. Delete at index
 Write a function that deletes the node at index index of a listint_t linked list.
 
 	_ Prototype: int delete_nodeint_at_index(listint_t **head, unsigned int index);
 	_ where index is the index of the node that should be deleted. Index starts at 0
 	_ Returns: 1 if it succeeded, -1 if it failed
-
+```
 julien@ubuntu:~/0x13. More singly linked lists$ cat 10-main.c 
 #include <stdlib.h>
 #include <string.h>
@@ -699,5 +699,5 @@ julien@ubuntu:~/0x13. More singly linked lists$ valgrind ./k
 ==5571== For counts of detected and suppressed errors, rerun with: -v
 ==5571== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)
 julien@ubuntu:~/0x13. More singly linked lists$ 
-
+```
 
