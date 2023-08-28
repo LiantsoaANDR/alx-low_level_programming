@@ -6,7 +6,7 @@ Write a function that prints all the elements of a listint_t list.
 	_ Return: the number of nodes
 	_ Format: see example
 	_ You are allowed to use printf
-
+```
 julien@ubuntu:~/0x13. More singly linked lists$ cat 0-main.c 
 #include <stdlib.h>
 #include <string.h>
@@ -45,13 +45,16 @@ julien@ubuntu:~/0x13. More singly linked lists$ ./a
 9
 8
 -> 2 elements
-julien@ubuntu:~/0x13. More singly linked lists$ 
+julien@ubuntu:~/0x13. More singly linked lists$
+```
+
 
 ## 1. List length
 Write a function that returns the number of elements in a linked listint_t list.
 
 	_ Prototype: size_t listint_len(const listint_t *h);
 
+```
 julien@ubuntu:~/0x13. More singly linked lists$ cat 1-main.c 
 #include <stdlib.h>
 #include <string.h>
@@ -89,13 +92,14 @@ julien@ubuntu:~/0x13. More singly linked lists$ gcc -Wall -pedantic -Werror -Wex
 julien@ubuntu:~/0x13. More singly linked lists$ ./b 
 -> 2 elements
 julien@ubuntu:~/0x13. More singly linked lists$
+```
 
 ## 2. Add node
 Write a function that adds a new node at the beginning of a listint_t list.
 
 	_ Prototype: listint_t *add_nodeint(listint_t **head, const int n);
 	_ Return: the address of the new element, or NULL if it failed
-
+```
 julien@ubuntu:~/0x13. More singly linked lists$ cat 2-main.c 
 #include <stdlib.h>
 #include <string.h>
@@ -134,6 +138,7 @@ julien@ubuntu:~/0x13. More singly linked lists$ ./c
 1
 0
 julien@ubuntu:~/0x13. More singly linked lists$ 
+```
 
 ## 3. 3. Add node at the end
 Write a function that adds a new node at the end of a listint_t list.
