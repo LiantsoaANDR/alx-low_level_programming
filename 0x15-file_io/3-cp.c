@@ -24,4 +24,24 @@
  */
 int main(int argc, char *argv[])
 {
+	int d_read, d_written, file_from, file_to;
+
+	if (argc != 3)
+	{
+		dprintf(STDERR_FILENO, "Usage: cp file_from file_to\n");
+		exit(97);
+	}
+
+	file_from = open(argv[1], O_RDONLY);
+	if (file_from == -1)
+	{
+		dprintf(STDERR_FILENO,"Error: Can't read from fil %s", argv[1]);
+		exit(98);
+	}
+	file_to = open(argv[2], O_WRONLY | O_CREAT | O_TRUNC, 0644);
+	if (file_to == -1)
+	{
+		dprintf(STDERR_FILENO, "Error: Can't write to %s", argv[2]);
+		exit(99);
+	}
 }
