@@ -51,7 +51,7 @@ int main(int argc, char *argv[])
 	{
 		if (d_read == -1)
 			handle_error("Error: Can't read from fil", argv[1], 98);
-		d_written = write(file_to, buffer, sizeof(buffer));
+		d_written = write(file_to, buffer, d_read);
 		if (d_written == -1)
 			handle_error("Error: Can't write to", argv[2], 99);
 		d_read = read(file_from, buffer, sizeof(buffer));
