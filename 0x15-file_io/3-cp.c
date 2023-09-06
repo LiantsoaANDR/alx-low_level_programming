@@ -1,4 +1,6 @@
 #include "main.h"
+#include <stdlib.h>
+#include <stdio.h>
 void handle_error(char *message, char *argument, int code);
 /**
  * main - copies the content of a file to another file
@@ -49,7 +51,7 @@ int main(int argc, char *argv[])
 			handle_error("Error: Can't read from fil", argv[1], 98);
 		d_written = write(file_to, buffer, 1024);
 		if (d_written == -1)
-			handle_error("Error: Can't write to", argv[2]), 99;
+			handle_error("Error: Can't write to", argv[2], 99);
 		d_read = read(file_from, buffer, 1024);
 	}
 	error_c1 = close(file_from);
