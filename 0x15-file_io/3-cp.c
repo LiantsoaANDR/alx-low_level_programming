@@ -53,7 +53,7 @@ int main(int argc, char *argv[])
 		if (d_read == -1)
 		{
 			dprintf(STDERR_FILENO, "Error: Can't read from fil %s\n", argv[1]);
-			exit();
+			exit(98);
 		}
 		d_written = write(file_to, buffer, 1024);
 		if (d_written == -1)
