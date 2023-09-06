@@ -45,7 +45,7 @@ int main(int argc, char *argv[])
 		handle_error("Error: Can't write to", argv[2], 99);
 
 	d_read = read(file_from, buffer, 1024);
-	while (d_read)
+	while (d_read > 0)
 	{
 		if (d_read == -1)
 			handle_error("Error: Can't read from fil", argv[1], 98);
