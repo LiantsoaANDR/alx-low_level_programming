@@ -25,6 +25,7 @@
 int main(int argc, char *argv[])
 {
 	int d_read, d_written, file_from, file_to;
+	char buffer[1024];
 
 	if (argc != 3)
 	{
