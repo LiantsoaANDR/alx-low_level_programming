@@ -40,7 +40,8 @@ int main(int argc, char *argv[])
 	if (file_from == -1)
 		handle_error("Error: Can't read from fil", argv[1], 98);
 
-	file_to = open(argv[2], O_WRONLY | O_CREAT | O_TRUNC, 0664);
+	file_to = open(argv[2], O_WRONLY | O_CREAT | O_TRUNC, S_IRUSR | S_IWUSR |
+			S_IRGRP | S_IWGRP | S_IROTH);
 	if (file_to == -1)
 		handle_error("Error: Can't write to", argv[2], 99);
 
