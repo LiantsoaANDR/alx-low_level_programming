@@ -1,4 +1,5 @@
 #include "main.h"
+void handle_error(char *message, char *argument, int code);
 /**
  * main - copies the content of a file to another file
  * @argc: argument count
@@ -35,46 +36,40 @@ int main(int argc, char *argv[])
 
 	file_from = open(argv[1], O_RDONLY);
 	if (file_from == -1)
-	{
-		dprintf(STDERR_FILENO, "Error: Can't read from fil %s\n", argv[1]);
-		exit(98);
-	}
+		handle_error("Error: Can't read from fil", argv[1], 98);
 
 	file_to = open(argv[2], O_WRONLY | O_CREAT | O_TRUNC, 0644);
 	if (file_to == -1)
-	{
-		dprintf(STDERR_FILENO, "Error: Can't write to %s\n", argv[2]);
-		exit(99);
-	}
+		handle_error("Error: Can't write to", argv[2], 99);
 
 	d_read = read(file_from, buffer, 1024);
 	while (d_read)
 	{
 		if (d_read == -1)
-		{
-			dprintf(STDERR_FILENO, "Error: Can't read from fil %s\n", argv[1]);
-			exit(98);
-		}
+			handle_error("Error: Can't read from fil", argv[1], 98);
 		d_written = write(file_to, buffer, 1024);
 		if (d_written == -1)
-		{
-			dprintf(STDERR_FILENO, "Error: Can't write to %s\n", argv[2]);
-			exit(99);
-		}
+			handle_error("Error: Can't write to", argv[2]), 99;
 		d_read = read(file_from, buffer, 1024);
 	}
 	error_c1 = close(file_from);
 	error_c2 = close(file_to);
 	if (error_c1 == -1)
-	{
-		dprintf(STDERR_FILENO, "Error: Can't close fd %s\n", argv[1]);
-		exit(100);
-	}
+		handle_error("Error: Can't close fd", argv[1], 100);
 	if (error_c2 == -1)
-	{
-		dprintf(STDERR_FILENO, "Error: Can't close fd %s\n", argv[2]);
-		exit(100);
-	}
+		handle_error("Error: Can't close fd", argv[2], 100);
 
 	return (0);
+}
+/**
+ * handle_error - prints a message and exit when an error occur
+ * @message: the message to print
+ * @argument: the argument from main function
+ * @code: the exit code
+ * Return: void
+ */
+void handle_error(char *message, char *argument, int code)
+{
+	dprintf(STDERR_FILENO, "%s %s\n", message, argument);
+	exit(code);
 }
