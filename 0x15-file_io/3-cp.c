@@ -57,9 +57,9 @@ int main(int argc, char *argv[])
 	error_c1 = close(file_from);
 	error_c2 = close(file_to);
 	if (error_c1 == -1)
-		handle_error("Error: Can't close fd", argv[1], 100);
+		handle_error("Error: Can't close fd\n", argv[1], 100);
 	if (error_c2 == -1)
-		handle_error("Error: Can't close fd", argv[2], 100);
+		handle_error("Error: Can't close fd\n", argv[2], 100);
 
 	return (0);
 }
