@@ -44,17 +44,17 @@ int main(int argc, char *argv[])
 	if (file_to == -1)
 		handle_error("Error: Can't write to", argv[2], 99);
 
-	d_read = read(file_from, buffer, 1024);
+	d_read = read(file_from, buffer, sizeof(buffer));
 	if (d_read == -1)
 		handle_error("Error: Can't read from fil", argv[1], 98);
 	while (d_read > 0)
 	{
 		if (d_read == -1)
 			handle_error("Error: Can't read from fil", argv[1], 98);
-		d_written = write(file_to, buffer, 1024);
+		d_written = write(file_to, buffer, sizeof(buffer));
 		if (d_written == -1)
 			handle_error("Error: Can't write to", argv[2], 99);
-		d_read = read(file_from, buffer, 1024);
+		d_read = read(file_from, buffer, sizeof(buffer));
 	}
 	error_c1 = close(file_from);
 	error_c2 = close(file_to);
