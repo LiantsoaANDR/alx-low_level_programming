@@ -57,9 +57,9 @@ int main(int argc, char *argv[])
 		d_read = read(file_from, buffer, sizeof(buffer));
 	}
 	error_c1 = close(file_from);
-	error_c2 = close(file_to);
 	if (error_c1 == -1)
 		handle_error("Error: Can't close fd\n", argv[1], 100);
+	error_c2 = close(file_to);
 	if (error_c2 == -1)
 		handle_error("Error: Can't close fd\n", argv[2], 100);
 
