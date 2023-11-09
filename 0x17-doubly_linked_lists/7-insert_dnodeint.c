@@ -1,5 +1,6 @@
 #include "lists.h"
 #include <stdlib.h>
+#include <stdio.h>
 /**
  * insert_dnodeint_at_index - inserts a new node at a given position
  * @h: pointer to the pointer of the head
@@ -17,11 +18,20 @@ dlistint_t *insert_dnodeint_at_index(dlistint_t **h, unsigned int idx, int n)
 		return (NULL);
 
 	new->n = n;
+	if (!idx)
+	{
+		new->next = current;
+		*h = new;
+		return (new);
+	}
 
-	while (current && idx > 0)
+	while (current && i < idx)
 	{
 		if (i == idx - 1)
+		{
+			printf("breadk occured\n");
 			break;
+		}
 		current = current->next;
 		i++;
 	}
@@ -33,7 +43,8 @@ dlistint_t *insert_dnodeint_at_index(dlistint_t **h, unsigned int idx, int n)
 
 	new->prev = current;
 	new->next = current->next;
-	current->next->prev = new;
+	if (current->next)
+		current->next->prev = new;
 
 	return (new);
 }
