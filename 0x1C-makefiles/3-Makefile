@@ -18,5 +18,4 @@ fclean:
 	$(RM) $(OBJ)
 
 re:
-	oclean
-	all
+	oclean all
